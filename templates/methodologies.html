@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<main id="method-main">
+    <div id="method-main-title">
+        <img src="/static/img/notes.png" alt="notes logo" width="50px" height="50px">
+        <h1 id="method-title">Methodologies</h1>
+        <img src="/static/img/notes.png" alt="notes logo" width="50px" height="50px">
+    </div>
+
+    <p>
+        This web app was produced with Python and HTML/CSS. The different procedures and methods used for the major
+        components can be seen by clicking the buttons below:
+    </p>
+
+    <div id="method-buttons">
+        <a href="{{ url_for('allocation_methodology') }}" class="method-click">Allocation Model</a>
+        <a href="{{ url_for('scoring_methodology') }}" class="method-click">Scoring Scheme</a>
+        <a href="{{ url_for('tech_methodology') }}" class="method-click">Technology Used</a>
+    </div>
+
+</main>
+
+{% endblock %}

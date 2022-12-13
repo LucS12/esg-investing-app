@@ -1,0 +1,91 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<main id="scoring-main">
+    <div id="scoring-method-title">
+        <img src="/static/img/leaf.png" alt="notes logo" width="50px" height="50px">
+        <h1>ESG Scoring Methodology</h1>
+        <img src="/static/img/leaf.png" alt="notes logo" width="50px" height="50px">
+    </div>
+
+    <p id="main-rating-des">
+        1960 stocks are rated for their wellness on each of the ESG pillars (Environmental, Social, and Governance) using
+        55 total different Bloomberg sourced fields of data. Those fields are aggregated and standardized according to maximum
+        values to then rank the companies based on if the more or less is better for those particular values (more pollution
+        emissions are worse, for example).
+        All scores are then standardized from 0 to 100, where 100 signifies the best score. Below, the methods for
+        calculating each one can be seen.
+    </p>
+
+    <div id="scoring-des">
+        <section id="E_scr-method">
+
+            <div id="E-method-title">
+                <img src="/static/img/env_logo.png" alt="notes logo" width="50px" height="50px">
+                <h3>Environmental</h3>
+            </div>
+                <p>
+                    Measures how well a company does in terms of environmental effects and consideration.
+                    The following is the makeup of this score:
+                </p>
+                <ol>
+                    <li>Pollution Emissions: 35%</li>
+                    <li>Policies and Initiatives: 15%</li>
+                    <li>Regulations Passed: 50%</li>
+                </ol>
+        </section>
+
+        <section id="S_scr-method">
+            <div id="S-method-title">
+                <img src="/static/img/soc_logo.png" alt="notes logo" width="50px" height="50px">
+                <h3>Social</h3>
+            </div>
+                <p>
+                   Measures how well a company does in terms of socially ethical topics such as bribery,
+                    health, safety, human rights, anti-slavery, etc. The following is the makeup of this score:
+                </p>
+                <ol>
+                    <li>Ethical Policies: 80%</li>
+                    <li>People Care/Protection: 20%</li>
+                </ol>
+
+        </section>
+
+        <section id="G_scr-method">
+            <div id="G-method-title">
+                <img src="/static/img/gov_logo.png" alt="notes logo" width="50px" height="50px">
+                <h3>Governance</h3>
+            </div>
+                <p>
+                    Measures how well a company does in terms of management in topics such as fairness,
+                    proper compensation, bias, diversity, etc.
+                    The following is the makeup of this score:
+                </p>
+                <ol>
+                    <li>Firm Commitment: 30%</li>
+                    <li>Diversity & Inclusion: 20%</li>
+                    <li>Fairness & Integrity: 50%</li>
+                </ol>
+
+        </section>
+
+        <section id="ESG_scr-method">
+            <div id="ESG-method-title">
+                <img src="/static/img/esg_logo.png" alt="notes logo" width="50px" height="50px">
+                <h3>Total ESG</h3>
+            </div>
+                <p>
+                    The overall/total ESG score considering all 3 pillars. It is just the average of the three
+                    pillar scores to get a sense of the overall ESG performance.
+                </p>
+                <ol id="esg-list">
+                    <li>Environmental: 1/3</li>
+                    <li>Social: 1/3</li>
+                    <li>Governance: 1/3</li>
+                </ol>
+
+        </section>
+    </div>
+</main>
+
+{% endblock %}

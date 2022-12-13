@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ESG Investing</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+        <!--Scripts for dropdown searchbox of ratings and loading page of allocation-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+        <script type="text/javascript">// <![CDATA[
+            function loading(){
+                $("#loading").show();
+                $("#content").hide();
+            }
+    // ]]></script>
+
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <h1 class="logo"><a href="{{ url_for('index') }}">ESG Investing</a></h1>
+            <ul class="nav-links">
+                <a href="{{ url_for('index') }}"><li class="active">Home</li></a>
+                <a href="{{ url_for('allocation') }}"><li>Allocation</li></a>
+                <a href="{{ url_for('ratings') }}"><li>Ratings</li></a>
+                <a href="{{ url_for('methodologies') }}"><li>Methodologies</li></a>
+                <a href=" {{ url_for('contact_me') }} "><li>Contact</li></a>
+            </ul>
+        </nav>
+
+        <!--Main Home Page Content -->
+        <header>
+        {% block content %}
+            <!-- Main Title and Buttons -->
+            <div class="header-content">
+                <h4>HOW YOU GET THERE MATTERS.</h4>
+                <h1>Invest Responsibly.</h1>
+                <a href="{{ url_for('allocation') }}" class="ctn1">ALLOCATE CAPITAL</a>
+                <a href="{{ url_for('ratings') }}" class="ctn">VIEW RATINGS</a>
+            </div>
+
+            <!-- Icons and Summaries of ESG Ratings/Allocation Methods -->
+            <div class="header-content2">
+                <div class="content2-figure">
+                    <img src="/static/img/chart_finance.png" alt="Finance icon">
+                    <h3>Allocation Using Renowned Finance Theories.</h3>
+                    <a href="{{ url_for('allocation_methodology') }}">Learn More</a>
+                </div>
+
+                <div class="content2-figure">
+                    <img src="/static/img/leaf.png" alt="Sustainability icon">
+                    <h3>Proprietary ESG scores with Bloomberg sourced data.</h3>
+                    <a href="{{ url_for('scoring_methodology') }}">Learn More</a>
+                </div>
+
+                <div class="content2-figure">
+                    <img src="/static/img/programming.png" alt="Coding icon">
+                    <h3>Coded in Python with Flask, Pandas, and more.</h3>
+                    <a href="{{ url_for('tech_methodology') }}">Learn More</a>
+                </div>
+            </div>
+        </header>
+        {% endblock %}
+    </body>
+</html>

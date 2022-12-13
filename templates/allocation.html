@@ -1,0 +1,129 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div id="loading">
+    <div>
+        <img src="https://www.oppenheimer.com/_assets/images/map/loader.gif" alt="this slowpoke moves"  width="75" />
+        <p>Allocating Capital...</p>
+    </div>
+</div>
+<div id="content" class="getAllocation">
+
+    <div id="title-content-form">
+        <img src="/static/img/coins.png" alt="Money Profit">
+        <h1 id="form-title">Your Personalized Allocations</h1>
+        <img src="/static/img/coins.png" alt="Money Profit">
+    </div>
+    <p id="form-parag">
+        Answer the following questions to get a personalized allocation of capital for your equity portfolio.
+        For the ESG questions, 100 gives the most care and 0 the least. For the risk-aversion question,
+        5 takes the most risk and 0 avoids the most risk.
+        After answering all questions, click on the "Create Portfolio" button!
+        To learn more, visit <a href="{{ url_for('allocation_methodology') }}" id="method-link">Methodologies</a>.
+    </p>
+
+    <form action="{{ url_for('portfolio') }}" method="post">
+
+            <div id="form-content">
+                <div id="left-side">
+                    <div class="questions">
+                        <p class="question-text" title="Carbon emissions, regulatory tests, anti-poullition actions, etc.">
+                            <strong class="q-nums">1</strong>How much do you care about <a href="{{ url_for('scoring_methodology') }}" target="_blank" id="env-word">Environmental</a> issues?
+                        </p>
+                        <input class="slider-input" id="input-env" type="range" name="E" min="0" max="100" value="50">
+                        <span class="sliders" id="spanE">50</span>
+                    </div>
+
+                    <div class="questions">
+                        <p class="question-text" title="Employee unionization, ethical policies, child labor, etc.">
+                            <strong class="q-nums">2</strong>How much do you care about <a href="{{ url_for('scoring_methodology') }}" target="_blank" id="soc-word">Social</a> issues?
+                        </p>
+                        <input class="slider-input" id="input-soc" type="range" name="S" min="0" max="100" value="50">
+                        <span class="sliders" id="spanS">50</span>
+                    </div>
+
+                    <div class="questions">
+                        <p class="question-text" title="Management fairness/bias, corruption, employee compensation, etc.">
+                            <strong class="q-nums">3</strong>How much do you care about <a href="{{ url_for('scoring_methodology') }}" target="_blank" id="gov-word">Governance</a> issues?
+                        </p>
+                        <input class="slider-input" id="input-gov" type="range" name="G" min="0" max="100" value="50">
+                        <span class="sliders" id="spanG">50</span>
+                    </div>
+
+                    <div class="questions">
+                        <p class="question-text" title="Measured by Volatility & Variance.">
+                            <strong class="q-nums">4</strong>How much <a href="" id="risk-word">risk</a> would you like to take?
+                        </p>
+                        <input class="slider-input" id="input-risk" type="range" name="risk" min="0" max="5" step="0.01" value="1.5">
+                        <span class="sliders" id="spanR">1.5</span>
+                    </div>
+
+                    <script>
+                        const slideValueE = document.querySelector("#spanE");
+                        const inputSliderE = document.querySelector("#input-env");
+                        inputSliderE.oninput = (()=>{
+                            let value = inputSliderE.value;
+                            slideValueE.textContent = value;
+                        });
+
+                        const slideValueS = document.querySelector("#spanS");
+                        const inputSliderS = document.querySelector("#input-soc");
+                        inputSliderS.oninput = (()=>{
+                            let value = inputSliderS.value;
+                            slideValueS.textContent = value;
+                        });
+
+                        const slideValueG = document.querySelector("#spanG");
+                        const inputSliderG = document.querySelector("#input-gov");
+                        inputSliderG.oninput = (()=>{
+                            let value = inputSliderG.value;
+                            slideValueG.textContent = value;
+                        });
+
+                        const slideValueR = document.querySelector("#spanR");
+                        const inputSliderR = document.querySelector("#input-risk");
+                        inputSliderR.oninput = (()=>{
+                            let value = inputSliderR.value;
+                            slideValueR.textContent = value;
+                        });
+                    </script>
+                </div>
+
+                <div id="right-side">
+                    <div class="questions" id="sectors-question">
+                        <p class="question-text"><strong class="q-nums">5</strong>Any sectors you want to AVOID?</p>
+                        <input type="checkbox" id="communications" name="sectors" value="Communication Services">
+                        <label for="communications">Communication Services</label></br>
+
+                        <input type="checkbox" id="consumer" name="sectors" value="Consumer">
+                        <label for="consumer">Consumer</label></br>
+
+                        <input type="checkbox" id="financial" name="sectors" value="Financials">
+                        <label for="financial">Financials</label></br>
+
+                        <input type="checkbox" id="health" name="sectors" value="Health Care">
+                        <label for="health">Health Care</label></br>
+
+                        <input type="checkbox" id="it" name="sectors" value="Information Technology">
+                        <label for="it">Information Technology</label></br>
+
+                        <input type="checkbox" id="util" name="sectors" value="Utilities">
+                        <label for="util">Utilities</label>
+                    </div>
+
+                    <div class="questions">
+                        <p class="question-text"><strong class="q-nums">6</strong>Any stocks you want to AVOID? (Type symbols)</p>
+                        <input type="text" name="symb" placeholder="Separate by comma (Ex: AAPL,MSFT,TSLA...)" >
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="submit-button" title="This may take a minute to load.">
+                <input type="submit" value="Create Portfolio" id="create-port" onclick="loading();">
+            </div>
+    </form>
+</div>
+
+
+{% endblock %}

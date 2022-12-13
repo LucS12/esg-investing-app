@@ -1,0 +1,77 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<main id="stock-rating-main">
+    <div id="stock-title-content">
+        <img src="/static/img/leaf.png" alt="leaf logo" width="50px" height="50px">
+        <h1 id="stock-title"><i>Symbol:</i> '{{ stock }}'</h1>
+        <img src="/static/img/leaf.png" alt="leaf logo" width="50px" height="50px">
+    </div>
+
+    <div id="top-row-info">
+        <p class="stock-info"><i>Sector: </i> <b> {{ symb_info['Sectors'] }}</b></p>
+        <p class="stock-info"><i>Market Cap: </i> <b> {{ symb_info['Market_Cap'] }} Million</b></p>
+        <p class="stock-info"><i>As of:</i>  04/28/2022</p>
+    </div>
+
+    <div id="bot-row-info">
+        <p class="stock-info"><i>Yearly Return: </i> <b>{{ symb_info['Return'] }}%</b></p>
+        <p class="stock-info"><i>Annual Volatility: </i> <b>{{ symb_info['Volatility'] }}%</b></p>
+        <p class="stock-info"><i>1-Year Beta: </i> <b>{{ symb_info['Beta_1Y'] }}</b></p>
+    </div>
+
+    <h2>Score Rankings:</h2>
+
+    <div id="esg-rankings">
+
+        <div id="env-rankings" class="rankings">
+            <div class="ranking-title">
+                <h3>Environmental</h3>
+                <img src="/static/img/env_logo.png" width="40" height="40">
+            </div>
+            <p id="env-score" class="scores"> {{ symb_info['E_score'] }} </p>
+            <p><b> {{ symb_info['sec_E'] }} </b> <i>out of {{ symb_info['sec_total'] }} (Sector)</i></p>
+            <p><b> {{ symb_info['uni_E'] }} </b> <i>out of 1960 (Universal)</i></p>
+
+        </div>
+
+        <div id="soc-rankings" class="rankings">
+            <div class="ranking-title">
+                <h3>Social</h3>
+                <img src="/static/img/soc_logo.png" width="40" height="40">
+            </div>
+            <p id="soc-score" class="scores"> {{ symb_info['S_score'] }} </p>
+            <p><b> {{ symb_info['sec_S'] }} </b> <i>out of {{ symb_info['sec_total'] }} (Sector)</i></p>
+            <p><b> {{ symb_info['uni_S'] }} </b> <i>out of 1960 (Universal)</i></p>
+        </div>
+
+        <div id="gov-rankings" class="rankings">
+            <div class="ranking-title">
+                <h3>Governance</h3>
+                <img src="/static/img/gov_logo.png" width="40" height="40">
+            </div>
+            <p id="gov-score" class="scores"> {{ symb_info['G_score'] }} </p>
+            <p><b> {{ symb_info['sec_G'] }} </b> <i>out of {{ symb_info['sec_total'] }} (Sector)</i></p>
+            <p><b> {{ symb_info['uni_G'] }} </b> <i>out of 1960 (Universal)</i></p>
+        </div>
+
+        <div id="esg-rankings-div" class="rankings">
+            <div class="ranking-title">
+                <h3>Total ESG</h3>
+                <img src="/static/img/esg_logo.png" width="40" height="40">
+            </div>
+            <p id="esg-score" class="scores"> {{ symb_info['ESG_score'] }} </p>
+            <p><b> {{ symb_info['sec_esg'] }} </b> <i>out of {{ symb_info['sec_total'] }} (Sector)</i></p>
+            <p><b> {{ symb_info['uni_esg'] }} </b> <i>out of 1960 (Universal)</i></p>
+        </div>
+
+    </div>
+
+    <div id="rating-links">
+        <a href=" {{ url_for('ratings') }} " id="other-ratings">Other Ratings</a>
+        <a href=" {{ url_for('scoring_methodology') }} " id="more-about-ratings">Learn More</a>
+    </div>
+
+</main>
+
+{% endblock %}

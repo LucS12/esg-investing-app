@@ -1,0 +1,84 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<main id="main-ratings">
+    <div id="main-div-content">
+
+        <div id="rating-title-content">
+            <img src="/static/img/leaf.png" alt="leaf logo" width="40px" height="40px">
+            <h1 id="rating-title">ESG Stock Ratings</h1>
+            <img src="/static/img/leaf.png" alt="leaf logo" width="40px" height="40px">
+        </div>
+
+        <p>
+            1960 companies from the NASDAQ Composite Index are rated for each of the ESG pillars.
+            Scores range from 0 to 100, where 100 means the best. Below, it can be seen what each
+            ESG pillar score measures. Click <a href="{{ url_for('scoring_methodology') }}" id="link-here">here</a> to learn more!
+        </p>
+        <form action="#" method="post" id="rating-form">
+            <select id="rating-question" name="symbol-rating">
+                <option value="No Stock Was Selected">Select a stock</option>
+                {% for stock in data.index %}
+                    <option value="{{ stock }}">{{ stock }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="See Rating" id="rating-submit">
+        </form>
+
+        <div id="esg-descriptions">
+            <a href="{{ url_for('scoring_methodology') }}" id="env-link">
+                <div id="env-des" class="descriptions">
+                    <img src="/static/img/env_logo.png" width="40" height="40">
+                    <h3 class="des-title">Environmental</h3>
+                    <ul class="des-list">
+                        <li>Pollution Emissions</li>
+                        <li>Sustainable Initiatives</li>
+                        <li>Passing Regulations</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="{{ url_for('scoring_methodology') }}" id="soc-link">
+                <div id="soc-des" class="descriptions">
+                    <img src="/static/img/soc_logo.png" width="40" height="40">
+                    <h3 class="des-title">Social</h3>
+                    <ul class="des-list">
+                        <li>Ethical Initiatives</li>
+                        <li>Human Rights</li>
+                        <li>Proper Conditions</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="{{ url_for('scoring_methodology') }}" id="gov-link">
+                <div id="gov-des" class="descriptions">
+                    <img src="/static/img/gov_logo.png" width="40" height="40">
+                    <h3 class="des-title">Governance</h3>
+                    <ul class="des-list">
+                        <li>Management Fairness</li>
+                        <li>Diversity</li>
+                        <li>Commitment</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="{{ url_for('scoring_methodology') }}" id="esg-link">
+                <div id="esg-des" class="descriptions">
+                    <img src="/static/img/esg_logo.png" width="40" height="40">
+                    <h3 class="des-title">ESG</h3>
+                    <ul class="des-list">
+                        <li>Total inclusive score</li>
+                        <li>Overall of 3 pillars</li>
+                    </ul>
+                </div>
+            </a>
+        </div>
+    </div>
+</main>
+<script type="text/javascript">
+      $("#rating-question").select2({
+        dropdownParent: $('#rating-form')
+      });
+</script>
+{% endblock %}
+

@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div id="port-info">
+    <div id="port-left" class="port">
+
+        <h1>Investment Portfolio</h1>
+
+        <div id="risk-return" class="metrics">
+            <h3>Annual Return:<span id="ret">{{ ret }}%</span></h3>
+            <h3>Annual Volatility: <span id="vol">{{ vol }}%</span></h3>
+            <h3>1-Year Beta: <span id="beta">{{ beta }}</span></h3>
+        </div>
+
+        <div id="esg-metrics" class="metrics">
+            <h3>Environmental Score: <span id="env">{{ e_scr }}</span></h3>
+            <h3>Social Score: <span id="s">{{ s_scr }}</span></h3>
+            <h3>Governance Score: <span id="g">{{ g_scr }}</span></h3>
+            <h3>ESG Score: <span id="esg">{{ esg_scr }}</span></h3>
+            <p><i>*Out of 100, where 100 means best.*</i></p>
+        </div>
+
+        <p id="csv">
+            <a href="{{ url_for('download_csv') }}">Download Portfolio (CSV)</a>
+        </p>
+
+        <a href=" {{ url_for('allocation') }} " id="try-again">Re-allocate</a>
+
+    </div>
+
+    <div id="port-right" class="port">
+        <div id="port-stocks">
+            <h2 id="stock-title" class="graph-title">Your Stocks:</h2>
+            <div id="chart_stocks" class="chart_stocks"></div>
+        </div>
+        <div id="port-sectors">
+            <h2 id="sector-title" class="graph-title">Your Sectors:</h2>
+            <div id="chart_sectors" class="chart_sectors"></div>
+        </div>
+    </div>
+</div>
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+  var stocks = {{graph_stocks | safe}};
+  Plotly.plot('chart_stocks',stocks,{});
+
+  var sectors = {{graph_sectors | safe}};
+  Plotly.plot('chart_sectors',sectors,{});
+</script>
+
+{% endblock %}

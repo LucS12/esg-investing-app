@@ -1,0 +1,87 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<main id="tech-main">
+    <div id="tech-title">
+        <img src="/static/img/programming.png" alt="programming logo" width="50px" height="50px">
+        <h1>Technology Used</h1>
+        <img src="/static/img/programming.png" alt="programming logo" width="50px" height="50px">
+    </div>
+
+    <section id="languages-used">
+        <a href="https://www.python.org/" target="_blank"><div>
+            <img src="/static/img/python.png" alt="python logo" width="65px" height="65px">
+            <h3>Mainly Python</h3>
+        </div></a>
+        <a href="https://www.w3.org/standards/webdesign/htmlcss" target="_blank"><div>
+            <img src="/static/img/html_logo.png" alt="html logo" width="65px" height="65px">
+            <h3>HTML</h3>
+        </div></a>
+        <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank"><div>
+            <img src="/static/img/css_logo.png" alt="css logo" width="65px" height="65px">
+            <h3>CSS</h3>
+         </div></a>
+         <a href="https://www.javascript.com/" target="_blank"><div>
+            <img src="/static/img/js_logo.png" alt="JavaScript logo" width="53px" height="53px" id="js-img">
+            <h3 id="js-title">Minimum JS</h3>
+        </div></a>
+    </section>
+
+    <section id="packages-used">
+
+        <div id="top-packages">
+
+            <a href="https://pandas.pydata.org/" target="_blank"><div id="pandas">
+                <img src="/static/img/pandas.png" alt="Pandas logo" width="40px" height="40px">
+                <h3>Pandas</h3>
+                <p>
+                    Gets stock and ESG data from files, formats it appropriately, and allows organized/convenient
+                    calculations to be made for each one.
+                </p>
+            </div></a>
+
+            <a href="https://numpy.org/" target="_blank"><div id="numpy">
+                <img src="/static/img/numpy_logo.png" alt="NumPy logo" width="40px" height="40px">
+                <h3>NumPy</h3>
+                <p>
+                    Mathematical functions used as well as vectorized mechanics for the model formulas that involve large
+                    tables, matrices, and vectors.
+                </p>
+            </div></a>
+
+        </div>
+
+        <div id="bot-packages">
+            <a href="https://plotly.com/python/" target="_blank"><div id="plotly">
+                <img src="/static/img/plotly.png" alt="Plotly logo" width="40px" height="40px">
+                <h3>Plotly</h3>
+                <p>
+                    Generates the interactive and visually pleasing pie charts of the allocation model results.
+                </p>
+            </div></a>
+
+            <a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank"><div id="flask-div">
+                <img src="/static/img/flask.png" alt="Flask logo" width="40px" height="40px">
+                <h3>Flask</h3>
+                <p>
+                    Web framework to generate the different routes and overall web app.
+                </p>
+            </div></a>
+
+            <a href="https://www.cvxpy.org/" target="_blank"><div id="cvxpy">
+                <img src="/static/img/cvxpy.png" alt="CVXPY logo" width="40px" height="40px">
+                <h3>CVXPY</h3>
+                <p>
+                    Optimization to find minimums of allocation model with given constraints.
+                </p>
+            </div></a>
+
+        </div>
+    </section>
+
+    <div id="github-button">
+        <a href="" target="_blank">GitHub Repo</a>
+    </div>
+</main>
+
+{% endblock %}

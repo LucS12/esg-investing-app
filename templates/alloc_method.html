@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<main id="alloc-method-main">
+    <div id="alloc-title">
+        <img src="/static/img/chart_finance.png" alt="notes logo" width="50px" height="50px">
+        <h1 id="method-title">Allocation Methodology</h1>
+        <img src="/static/img/chart_finance.png" alt="notes logo" width="50px" height="50px">
+    </div>
+
+    <section id="intro-alloc">
+        <p>
+            As it can be understood from the <a href=" {{ url_for('allocation') }} ">allocation page</a>, the allocation model is based around taking user inputs/preferences
+            regarding ESG criteria, risk, and specific sectors/stocks in order to produce an equity portfolio. Once this input
+            is gathered by the forum questions of the page, the allocation model uses them to produce an "efficient" set of
+            allocations based on two main theories and methodologies: Markowitz Modern Portfolio Theory & the Black-Litterman
+            Model.
+        </p>
+    </section>
+
+    <section>
+        <h3>Black-Litterman Model:</h3>
+        <p>
+            The Black-Litterman model is used to produce the returns of the stocks as well as the covariance matrix
+            to be used in the mean-variance optimization. The actual model built and used here is based on Attilio Meucci's
+            implementation, which uses mathematically equivalent and computationally more stable equations for the posterior
+            returns and covariance matrix. These are found using the log daily returns of the stocks as the "investor views,"
+            which are necessary for this model since it incorporates future expectations.
+        </p>
+    </section>
+
+    <section>
+        <h3>Markowitz Modern Portfolio Theory:</h3>
+        <p>
+            Once the returns and covariances are calculated, a mean-variance optimization is done to find an efficient allocation
+            that minimizes the portfolio variance. Additionally, the objective function also includes a risk-aversion parameter
+            and a return parameter to give this mind and not only variance alone. This way, investor preference on risk
+            can also be taken into account by input. A weight of 0-5 can be given for this risk-aversion parameter, to either
+            put less or more emphasis on the return of the portfolio to overtake the variance minimization. Lastly, the ESG
+            criteria is implemented through portfolio score constraints given the user input on their care for each ESG pillar.
+        </p>
+    </section>
+
+    <section>
+        <h3>References:</h3>
+        <ol>
+            <li><a href="#" target="_blank">Click here to see the code on GitHub!</a></li>
+            <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1117574" target="_blank">"The Black-Litterman Approach: Original Model and Extensions" (Attilio Meucci - 2010)</a></li>
+            <li><a href="http://www.columbia.edu/~mh2078/FoundationsFE/MeanVariance-CAPM.pdf" target="_blank">"Mean-Variance Optimization and the CAPM" (Martin Haugh - 2016)</a></li>
+        </ol>
+    </section>
+
+</main>
+
+{% endblock %}
