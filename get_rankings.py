@@ -15,7 +15,7 @@ def calc_risk_return(data):
     Same Pandas DataFrame with annual returns and volatilities.
     '''
     #Read in price data:
-    prices_path = r"C:\Users\ldecs\OneDrive\Documents\esgApp\esg\static\data\stock_prices.csv"    
+    prices_path = "\static\data\stock_prices.csv"    
     prices = pd.read_csv(prices_path, index_col='date', parse_dates=True) 
     
     #Calculate daily log returns:
@@ -43,7 +43,7 @@ def get_company(stock):
          metrics/information.
     '''
     #Read in esg score data:
-    esg_path = r"C:\Users\ldecs\OneDrive\Documents\esgApp\esg\static\data\stock_data.csv"
+    esg_path = "\static\data\stock_data.csv"
     esg_data = pd.read_csv(esg_path, index_col='ticker')
     
     #Get risk and return metrics from function above:
@@ -84,19 +84,3 @@ def get_company(stock):
         stock_metrics[k2] = len(sector_data[col].sort_values(ascending=False).loc[:stock])
         
     return stock_metrics
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
