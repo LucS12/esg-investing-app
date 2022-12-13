@@ -104,11 +104,11 @@ def allocate_capital(E_scr, S_scr, G_scr, A, sectors=None, stocks=None):
          ESG score constraints to exhibit user preference/input.
     '''
     #Read in price data of stocks:
-    prices_path = r"C:\Users\ldecs\OneDrive\Documents\esgApp\esg\static\data\stock_prices.csv"    
+    prices_path = "\static\data\stock_prices.csv"    
     prices = pd.read_csv(prices_path, index_col='date', parse_dates=True)  
 
     #Read in esg score data:
-    esg_path = r"C:\Users\ldecs\OneDrive\Documents\esgApp\esg\static\data\stock_data.csv"
+    esg_path = "\static\data\stock_data.csv"
     data = pd.read_csv(esg_path, index_col='ticker')
     
     #Filter out user input of UNWANTED sectors:
@@ -192,7 +192,7 @@ def get_portfolio(E_scr, S_scr, G_scr, A, sectors=None, stocks=None):
     allocations = allocations[allocations['Allocations'] > 0]
     
     #Write DataFrame to CSV for download option for users:
-    allocations[['Allocations','Sectors']].to_csv(r'C:\Users\ldecs\OneDrive\Documents\esgApp\esg\static\data\portfolio.csv')
+    allocations[['Allocations','Sectors']].to_csv('\static\data\portfolio.csv')
 
     #Empty dictionary to store formatted/calculated portfolio metrics:
     metrics = {}
