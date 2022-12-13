@@ -1,0 +1,1227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 75px;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    padding: 28px 40px;
+}
+
+.nav-links li:hover {
+    background: rgba(40,40,40,1);
+    cursor: pointer;
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+header {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/static/img/esg_forest2.jpg');
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Titles Home Page */
+.header-content {
+    color: whitesmoke;
+    margin-top: 120px;
+    text-align: center;
+    padding: 70px;
+    background: radial-gradient(black, transparent 55%);
+}
+
+.header-content h4 {
+    font-family: "Sweet Sans Medium";
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 3px;
+    line-height: 20px;
+    text-shadow: 2px 2px 7px black;
+}
+
+.header-content h1 {
+    font-size: 70px;
+    margin-top: 15px;
+    margin-bottom: 55px;
+    text-shadow: 2px 2px 20px black;
+}
+
+/* Main Buttons Home Page*/
+.ctn, .ctn1 {
+    padding: 15px 25px;
+    background-color: transparent;
+    border: 2.5px solid white;
+    border-radius: 50px;
+    color: whitesmoke;
+    font-size: 15px;
+    margin: 12px;
+    cursor: pointer;
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-weight: 600;
+    text-align: center;
+    transition: all .3s;
+    touch-action: manipulation;
+}
+
+.ctn {
+    padding: 15px 35px;
+}
+
+.ctn:hover, .ctn1:hover  {
+    background-color: white;
+    color: black;
+    font-size: 17px;
+    transition-duration: .35s;
+}
+
+/* Home Page Informative Boxes */
+.header-content2 {
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content2-figure {
+    text-align: center;
+    width: 300px;
+    padding: 30px;
+    margin: 30px;
+    background: rgba(0,0,0,0.75);
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.content2-figure h3 {
+    color: whitesmoke;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.content2-figure a {
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
+    padding: 10px 15px;
+}
+
+.content2-figure a:hover {
+    background-color: white;
+    color: black;
+    transition-duration: .35s;
+}
+
+/* ALLOCATION PAGE */
+.getAllocation {
+    margin-top: 5%;
+    background: rgba(0,0,0,0.75);
+    width: 950px;
+    border-radius: 20px;
+    padding: 45px 20px;
+    color: whitesmoke;
+}
+
+#title-content-form {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#form-title {
+    text-align: center;
+    font-family: "Sweet Sans Medium";
+    font-size: 45px;
+}
+
+#form-parag {
+    font-weight: 500;
+    margin-right: 100px;
+    margin-left: 100px;
+    line-height: 23px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#method-link {
+    transition: all .3s;
+    color: #89CFF0;
+    text-decoration: underline;
+}
+
+#method-link:hover {
+    pointer: cursor;
+    color: #8fbc8f;
+    font-size: 20px;
+    transition: all .3s;
+}
+
+#form-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#submit-button {
+    width: 50%;
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+#calc-info {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+#create-port {
+    cursor: pointer;
+    margin: auto;
+    padding: 12px 20px;
+    background-color: transparent;
+    border: 2.5px solid white;
+    border-radius: 50px;
+    color: whitesmoke;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all .3s;
+    touch-action: manipulation;
+}
+
+#create-port:hover  {
+    background-color: whitesmoke;
+    color: black;
+    font-size: 18px;
+    transition-duration: 0.5s;
+}
+
+strong.q-nums {
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Verdana;
+    padding: 9px 14px;
+    border: 2px solid whitesmoke;
+    border-radius: 50px;
+    margin-right: 13px;
+}
+
+.questions {
+    width: 100%;
+    font-size: 18px;
+}
+
+p.question-text {
+    margin-top: 40px;
+}
+
+#env-word, #soc-word, #gov-word, #risk-word {
+    transition: all .3s;
+}
+
+#env-word:hover {
+    pointer: cursor;
+    color: #3CB371;
+    font-size: 20px;
+    transition: all .3s;
+}
+
+#soc-word:hover {
+    pointer: cursor;
+    color: #87CEFA;
+    font-size: 20px;
+    transition: all .3s;
+}
+
+#gov-word:hover {
+    pointer: cursor;
+    color: #D2B48C;
+    font-size: 20px;
+    transition: all .3s;
+}
+
+#risk-word:hover {
+    pointer: cursor;
+    color: #DC143C;
+    font-size: 20px;
+    transition: all .3s;
+}
+
+input {
+    margin-top: 15px;
+    margin-left: 57px;
+}
+
+.slider-input {
+    width: 250px;
+    -webkit-appearance: none;
+    outline: none;
+    height: 10px;
+    border-radius: 10px;
+    background: whitesmoke;
+}
+
+input.slider-input::-webkit-slider-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input.slider-input#input-env::-webkit-slider-thumb {
+    border: 4px solid #3CB371;
+}
+
+input.slider-input#input-soc::-webkit-slider-thumb {
+    border: 4px solid #87CEFA;
+}
+
+input.slider-input#input-gov::-webkit-slider-thumb {
+    border: 4px solid #D2B48C;
+}
+
+input.slider-input#input-risk::-webkit-slider-thumb {
+    border: 4px solid #DC143C;
+    height: 22px;
+    width: 22px;
+}
+
+input[name=risk] {
+    width: 150px;
+}
+
+input[type=text] {
+    width: 300px;
+    height: 25px;
+    padding: 0 8px;
+}
+
+span.sliders {
+    font-size: 21px;
+    margin-left: 20px;
+    color: whitesmoke;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+div#loading {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    cursor: wait;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 20px;
+    font-family: Verdana;
+}
+
+div#loading div {
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    background: rgba(0,0,0,0.8);
+    border-radius: 20px;
+}
+
+div#loading img {
+    margin-top: 70px;
+}
+
+div#loading p {
+    margin-top: 17px;
+}
+
+/* PORTFOLIO PAGE */
+div#port-info {
+    display: flex;
+    width: 850px;
+    height: 660px;
+    margin-top: 5%;
+    background: rgba(0,0,0,0.75);
+    border-radius: 20px;
+}
+
+div.port {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+div#port-right {
+    width: 58%;
+    align-items: center;
+    text-align: center;
+}
+
+div#port-left {
+    padding-right: 0;
+    padding-left: 30px;
+    padding-top: 30px;
+    color: whitesmoke;
+}
+
+div#port-stocks{
+    height: 60%;
+    width: 100%;
+}
+
+#port-stocks, #port-sectors {
+    margin: 0;
+    padding: 0;
+}
+
+div.port .graph-title {
+    color: whitesmoke;
+    font-size: 28px;
+}
+
+#stock-title {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+div.port h1 {
+    text-align: center;
+    padding: 10px;
+    width: 310px;
+    margin: 0 auto;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+}
+div.metrics {
+    font-family: Verdana;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+div.metrics h3 {
+    margin-bottom: 10px;
+}
+
+div.metrics #ret {
+    padding-left: 40px;
+}
+
+div.metrics #vol {
+    padding-left: 12px;
+}
+
+div.metrics #beta {
+    padding-left: 58px;
+}
+
+div.metrics #env {
+    padding-left: 10px;
+}
+
+div.metrics #s {
+    padding-left: 95px;
+}
+
+div.metrics #g {
+    padding-left: 37px;
+}
+
+div.metrics #esg {
+    padding-left: 115px;
+}
+
+div.metrics p {
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+div#port-left #csv {
+    margin-top: 80px;
+    margin-left: 45px;
+    font-size: 18px;
+}
+
+div#port-left #csv a {
+    color: #89CFF0;
+    text-decoration: underline;
+    transition: all .3s;
+}
+
+div#port-left #csv a:hover {
+    font-size: 19px;
+    transition: all .3s;
+}
+
+div#port-left #try-again {
+    width: 125px;
+    margin-top: 35px;
+    margin-left: 77px;
+    text-align: center;
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
+    padding: 10px 15px;
+}
+
+div#port-left #try-again:hover {
+    background-color: white;
+    color: black;
+    transition-duration: .35s;
+}
+
+/* RATINGS PAGE */
+#main-ratings {
+    width: 100%;
+}
+
+#main-ratings #main-div-content {
+    padding: 10px;
+    background: rgba(0,0,0,0.75);
+    border-radius: 20px;
+    display: block;
+    width: 900px;
+    margin: auto;
+}
+
+#rating-title-content {
+    width: 425px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+#rating-title {
+    color: whitesmoke;
+}
+
+#main-div-content p {
+    color: whitesmoke;
+    width: 475px;
+    margin: auto;
+    margin-top: 15px;
+    font-weight: 500;
+    line-height: 23px;
+    font-size: 18px;
+}
+
+#main-div-content #link-here {
+    color: #89CFF0;
+    text-decoration: underline;
+}
+
+#main-div-content #link-here:hover {
+    pointer: cursor;
+    color: #8fbc8f;
+    font-size: 20px;
+    transition: all .3s;
+}
+
+#rating-form {
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#rating-form select {
+    width: 200px;
+    height: 25px;
+    font-size: 18px;
+    margin: 0;
+}
+
+.select2-search input {
+    margin-left: 0;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#rating-submit {
+    cursor: pointer;
+    margin: 0;
+    padding: 5px;
+    margin-left: 4px;
+}
+
+#esg-descriptions {
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    color: whitesmoke;
+    margin-bottom: 15px;
+}
+
+#esg-descriptions .descriptions {
+    width: 200px;
+    padding: 10px 5px;
+}
+
+#env-des {
+    border: 4px solid #8DB153;
+    border-radius: 30px;
+}
+
+#soc-des {
+    border: 4px solid #458FA5;
+    border-radius: 30px;
+}
+
+#gov-des {
+    border: 4px solid #EE7800;
+    border-radius: 30px;
+}
+
+#esg-des {
+    border: 4px solid whitesmoke;
+    border-radius: 30px;
+    height: 180px;
+}
+
+.des-title {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.des-list {
+    list-style-position: inside;
+    list-style-type: circle;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.des-list li {
+    margin-bottom: 5px
+}
+
+#esg-descriptions a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+#esg-descriptions #env-link:hover {
+    cursor: pointer;
+    background: rgba(141, 177, 83, 0.15);
+    border-radius: 30px;
+
+}
+
+#esg-descriptions #soc-link:hover {
+    cursor: pointer;
+    background: rgba(69, 143, 165, 0.15);
+    border-radius: 30px;
+
+}
+
+#esg-descriptions #gov-link:hover {
+    cursor: pointer;
+    background: rgba(238, 120, 0, 0.15);
+    border-radius: 30px;
+
+}
+
+#esg-descriptions #esg-link:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+}
+
+/* Stock Specific Rating Page */
+#stock-rating-main {
+    background: rgba(0,0,0,0.75);
+    border-radius: 20px;
+    display: block;
+    width: 1050px;
+    margin: auto;
+    color: whitesmoke;
+}
+
+#stock-title-content {
+    width: 430px;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 17px;
+}
+
+#date-calc {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 13px;
+    transform:
+}
+
+#top-row-info {
+    width: 675px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+#bot-row-info {
+    width: 675px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.stock-info i, #stock-title-content i {
+    color: #D2B48C;
+}
+
+#stock-rating-main h2 {
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 25px;
+}
+
+#esg-rankings {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.rankings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 240px;
+    align-items: center;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+}
+
+#env-rankings {
+    border: 4px solid #8DB153;
+    border-radius: 30px;
+}
+
+#soc-rankings {
+    border: 4px solid #458FA5;
+    border-radius: 30px;
+}
+
+#gov-rankings {
+    border: 4px solid #EE7800;
+    border-radius: 30px;
+}
+
+#esg-rankings-div {
+    border: 4px solid whitesmoke;
+    border-radius: 30px;
+}
+
+.ranking-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ranking-title h3 {
+    margin-right: 17px;
+    font-size: 20px;
+}
+
+.rankings .scores {
+    font-size: 27px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.rankings #env-score {
+    color: #a0d347;
+}
+
+.rankings #soc-score {
+    color: #67b8ce;
+}
+.rankings #gov-score {
+    color: #f48413;
+}
+
+.rankings p {
+    margin-top: 7px;
+}
+
+.rankings p i {
+    color: #d1ccc8;
+}
+
+.rankings p b {
+    font-size: 20px;
+}
+
+#rating-links {
+    display: flex;
+    width: 225px;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+#rating-links #more-about-ratings {
+    color: #89CFF0;
+    text-decoration: underline;
+}
+
+#rating-links #more-about-ratings:hover {
+    pointer: cursor;
+    color: #8fbc8f;
+    font-size: 17px;
+    transition: all .3s;
+}
+
+#rating-links #other-ratings {
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
+    padding: 10px 15px;
+}
+
+#rating-links #other-ratings:hover {
+    background-color: white;
+    color: black;
+    transition-duration: .35s;
+}
+
+/*Main Methodologies Page*/
+#method-main {
+    background: rgba(0,0,0,0.75);
+    border-radius: 20px;
+    display: block;
+    margin: auto;
+    color: whitesmoke;
+    width: 570px;
+}
+
+#method-main #method-main-title {
+    display: flex;
+    justify-content: space-around;
+    width: 450px;
+    margin: auto;
+    padding-top: 20px;
+    font-size: 20px;
+    align-items: center;
+}
+
+#method-main p {
+    padding: 20px 50px;
+    font-size: 18px;
+}
+
+#method-main #method-buttons {
+    display: flex;
+    width: 500px;
+    margin: auto;
+    justify-content: space-around;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+
+#method-buttons .method-click {
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
+    padding: 10px 15px;
+}
+
+#method-buttons .method-click:hover {
+    background-color: white;
+    color: black;
+    transition-duration: .35s;
+}
+
+/*Allocation Methodologies Page*/
+#alloc-method-main {
+    background: rgba(0,0,0,0.75);
+    display: block;
+    margin: auto;
+    width: 1000px;
+    color: whitesmoke;
+    border-radius: 20px;
+    padding: 25px 50px;
+}
+
+#alloc-method-main #alloc-title {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#alloc-method-main section {
+    margin-bottom: 20px;
+}
+
+#alloc-method-main section h3 {
+    margin-bottom: 10px;
+}
+
+#alloc-method-main section ol {
+    margin-left: 75px;
+}
+
+#alloc-method-main section ol li {
+    margin-bottom: 10px;
+}
+
+#alloc-method-main section ol li a {
+    color: #89CFF0;
+    text-decoration: underline;
+}
+
+#alloc-method-main section ol li a:hover {
+    pointer: cursor;
+    font-size: 17px;
+    transition: all .3s;
+}
+
+#intro-alloc a {
+    color: #89CFF0;
+    text-decoration: underline;
+}
+
+#intro-alloc a:hover {
+    pointer: cursor;
+    font-size: 17px;
+    transition: all .3s;
+}
+
+/*ESG Scoring Methodologies Page*/
+#scoring-main {
+    background: rgba(0,0,0,0.75);
+    display: block;
+    margin: auto;
+    color: whitesmoke;
+    padding: 30px;
+    width: 1200px;
+    border-radius: 20px;
+}
+
+#scoring-main #scoring-method-title {
+    display: flex;
+    width: 600px;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#scoring-main #main-rating-des {
+    padding: 0 200px;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+#scoring-main #scoring-des {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#scoring-des section {
+    width: 270px;
+    padding: 15px;
+}
+
+#E_scr-method {
+    border: 4px solid #8DB153;
+    border-radius: 30px;
+}
+
+#S_scr-method {
+    border: 4px solid #458FA5;
+    border-radius: 30px;
+}
+
+#G_scr-method {
+    border: 4px solid #EE7800;
+    border-radius: 30px;
+}
+
+#ESG_scr-method {
+    border: 4px solid whitesmoke;
+    border-radius: 30px;
+}
+
+#scoring-des section div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#scoring-des section div h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+#scoring-des section p {
+    padding: 0 8px;
+}
+
+#scoring-des section ol {
+    margin-left: 35px;
+    margin-top: 15px;
+}
+
+#scoring-des section #esg-list {
+    margin-left: 60px;
+}
+
+#scoring-des section ol li {
+    margin-top: 5px;
+}
+
+/*TOOLS USED PAGE of Methodologies*/
+#tech-main {
+    background: rgba(0,0,0,0.75);
+    width: 750px;
+    display: block;
+    margin: auto;
+    color: whitesmoke;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#tech-main #tech-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 450px;
+    margin: auto;
+}
+
+#tech-main #languages-used {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 525px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#tech-main section #js-title {
+    padding-top: 5px;
+}
+
+#tech-main section #js-img {
+    margin-top: 5px;
+}
+
+#tech-main #packages-used {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+#tech-main #packages-used #top-packages {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    width: 600px;
+}
+
+#tech-main #packages-used #top-packages div {
+    width: 270px;
+}
+
+#tech-main #packages-used #top-packages #pandas {
+    border: 4px solid #2c3799;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#tech-main #packages-used #top-packages #numpy {
+    border: 4px solid #00ACC1;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#tech-main #packages-used #bot-packages {
+    display: flex;
+    justify-content: space-around;
+    width: 730px;
+}
+
+#tech-main #packages-used #bot-packages div {
+    width: 230px;
+}
+
+#tech-main #packages-used #bot-packages #cvxpy {
+    border: 4px solid #512eb2;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#tech-main #packages-used #bot-packages #flask-div {
+    border: 4px solid white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#tech-main #packages-used #bot-packages #plotly {
+    border: 4px solid #516289;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#tech-main #packages-used h3 {
+    margin-top: 8px;
+}
+
+#tech-main #packages-used p {
+    margin-top: 8px;
+}
+
+#tech-main #github-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 35px;
+}
+
+#tech-main #github-button a {
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
+    padding: 10px 15px;
+}
+
+#tech-main #github-button a:hover {
+    background-color: white;
+    color: black;
+    transition-duration: .35s;
+}
+
+/*CONTACT PAGE */
+
+#contactme-main {
+    background: rgba(0,0,0,0.75);
+    display: block;
+    margin: auto;
+    color: whitesmoke;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#contactme-main #contact-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+}
+
+#contactme-main p {
+    margin: auto;
+    margin-top: 25px;
+    width: 430px;
+    font-size: 17px;
+}
+
+#contactme-main section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#contactme-main section h3 {
+    font-weight: none;
+    font-family: "Sweet Sans Medium";
+    font-size: 18px;
+}
+
+#contactme-main section #github-contact {
+    border: 4px solid white;
+    border-radius: 30px;
+    padding: 15px;
+}
+
+#contactme-main section #github-contact:hover {
+    cursor: pointer;
+    background: rgba(255,255,255, 0.15);
+    transition-duration: .35s;
+}
+
+#contactme-main section #linkedin-contact {
+    border: 4px solid #0288D1;
+    border-radius: 30px;
+    padding: 15px;
+}
+
+#contactme-main section #linkedin-contact:hover {
+    cursor: pointer;
+    background: rgba(2,136,209, 0.15);
+    transition-duration: .35s;
+}
+
+#contactme-main section #email-contact {
+    border: 4px solid #E84F4B;
+    border-radius: 30px;
+    padding: 15px;
+}
+
+#contactme-main section #email-contact:hover {
+    cursor: pointer;
+    background: rgba(232,79,75, 0.15);
+    transition-duration: .35s;
+}
