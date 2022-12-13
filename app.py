@@ -57,14 +57,14 @@ def portfolio():
 #Route to allow downloading option of CSV file of allocations:
 @app.route("/download")
 def download_csv():
-    f = r'C:\Users\ldecs\OneDrive\Documents\esgApp\esg\static\data\portfolio.csv'
+    f = '\static\data\portfolio.csv'
     return send_file(f, as_attachment=True)
 
 #Ratings search page:
 @app.route("/ratings", methods=['GET', 'POST'])
 def ratings():
     #Read in stock symbols and their ESG data:
-    data_path = r"C:\Users\ldecs\OneDrive\Documents\esgApp\esg\static\data\stock_data.csv"
+    data_path = "\static\data\stock_data.csv"
     data = pd.read_csv(data_path, index_col='ticker')
 
     #If user submits a stock symbol, show that new page with the ratings:
